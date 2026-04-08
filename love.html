@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Calculator ❤️ | Viral Tools</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff416c,#ff4b2b);
+    color:white;
+}
+
+/* Navbar */
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+    background:#000000cc;
+}
+.navbar a {
+    color:white;
+    margin:0 10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Container */
+.container {
+    max-width:500px;
+    margin:40px auto;
+    background:#000000aa;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+h1 {
+    margin-bottom:10px;
+}
+
+/* Inputs */
+input {
+    width:90%;
+    padding:12px;
+    margin:10px;
+    border-radius:10px;
+    border:none;
+}
+
+/* Button */
+button {
+    padding:12px 20px;
+    background:#00ffcc;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover {
+    background:#00e6b8;
+}
+
+/* Result */
+.result {
+    margin-top:20px;
+    font-size:20px;
+    color:#00ffcc;
+}
+
+/* Loader */
+.loader {
+    display:none;
+    margin-top:15px;
+}
+
+/* Ad box */
+.ad-box {
+    margin:15px 0;
+    padding:10px;
+    background:#111;
+    border-radius:10px;
+}
+
+/* Footer */
+.footer {
+    text-align:center;
+    padding:15px;
+    background:#000000cc;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+<div><b>ViralTools 🔥</b></div>
+<div>
+<a href="index.html">Home</a>
+<a href="tools.html">Tools</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+
+<div class="container">
+
+<h1>❤️ Love Calculator</h1>
+<p>Check your love compatibility instantly</p>
+
+<!-- 🔥 Adsterra Top Ad -->
+<div class="ad-box">
+<!-- Paste Adsterra Banner Code Here -->
+<p>Ad Space</p>
+</div>
+
+<input type="text" id="name1" placeholder="Your Name">
+<input type="text" id="name2" placeholder="Partner Name">
+
+<button onclick="calculateLove()">Check Love 💖</button>
+
+<div class="loader" id="loader">Calculating... ⏳</div>
+
+<div class="result" id="result"></div>
+
+<!-- 🔥 Monetag Unlock Button -->
+<div class="ad-box">
+<button onclick="goAd()">Unlock Full Result 🔥</button>
+</div>
+
+<!-- 🔥 Adsterra Bottom Ad -->
+<div class="ad-box">
+<!-- Paste Adsterra Native Ad -->
+<p>Ad Space</p>
+</div>
+
+</div>
+
+<div class="footer">
+<p>© 2026 ViralTools | All Rights Reserved</p>
+</div>
+
+<script>
+function calculateLove(){
+    let n1 = document.getElementById("name1").value;
+    let n2 = document.getElementById("name2").value;
+
+    if(n1==="" || n2===""){
+        alert("Enter both names!");
+        return;
+    }
+
+    document.getElementById("loader").style.display="block";
+
+    setTimeout(()=>{
+        document.getElementById("loader").style.display="none";
+
+        let percent = Math.floor(Math.random()*100);
+
+        let msg="";
+        if(percent>80) msg="Perfect Match ❤️🔥";
+        else if(percent>50) msg="Good Relationship 😊";
+        else msg="Needs Effort 💔";
+
+        document.getElementById("result").innerHTML =
+        "Love Score: <b>"+percent+"%</b><br>"+msg;
+    },2000);
+}
+
+/* 🔥 Monetag Redirect */
+function goAd(){
+    window.location.href="YOUR_MONETAG_LINK";
+}
+</script>
+
+</body>
+</html>

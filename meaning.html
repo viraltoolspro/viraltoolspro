@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Name Meaning 🔤 | Viral Tools</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#00c6ff,#0072ff);
+    color:white;
+}
+
+/* Navbar */
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+    background:#000000cc;
+}
+.navbar a {
+    color:white;
+    margin:0 10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Container */
+.container {
+    max-width:520px;
+    margin:40px auto;
+    background:#000000aa;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+h1 {margin-bottom:10px;}
+
+/* Input */
+input {
+    width:90%;
+    padding:12px;
+    margin:10px;
+    border-radius:10px;
+    border:none;
+}
+
+/* Button */
+button {
+    padding:12px 20px;
+    background:#ffcc00;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover {
+    background:#ffdb4d;
+}
+
+/* Result */
+.result {
+    margin-top:20px;
+    font-size:18px;
+    color:#ffcc00;
+}
+
+/* Loader */
+.loader {
+    display:none;
+    margin-top:15px;
+}
+
+/* Ad box */
+.ad-box {
+    margin:15px 0;
+    padding:10px;
+    background:#111;
+    border-radius:10px;
+}
+
+/* Footer */
+.footer {
+    text-align:center;
+    padding:15px;
+    background:#000000cc;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+<div><b>ViralTools 🔥</b></div>
+<div>
+<a href="index.html">Home</a>
+<a href="tools.html">Tools</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+
+<div class="container">
+
+<h1>🔤 Name Meaning Generator</h1>
+<p>Enter your name to discover its hidden meaning</p>
+
+<!-- 🔥 Adsterra Top -->
+<div class="ad-box">
+<!-- Paste Adsterra Banner Code -->
+<p>Ad Space</p>
+</div>
+
+<input type="text" id="name" placeholder="Enter Your Name">
+
+<button onclick="getMeaning()">Find Meaning ✨</button>
+
+<div class="loader" id="loader">Analyzing your name... ⏳</div>
+
+<div class="result" id="result"></div>
+
+<!-- 🔥 Monetag Unlock -->
+<div class="ad-box">
+<button onclick="goAd()">Unlock Full Meaning 🔥</button>
+</div>
+
+<!-- 🔥 Adsterra Bottom -->
+<div class="ad-box">
+<!-- Paste Adsterra Native / Social Bar -->
+<p>Ad Space</p>
+</div>
+
+</div>
+
+<div class="footer">
+<p>© 2026 ViralTools | All Rights Reserved</p>
+</div>
+
+<script>
+function getMeaning(){
+    let name = document.getElementById("name").value;
+
+    if(name===""){
+        alert("Please enter your name!");
+        return;
+    }
+
+    document.getElementById("loader").style.display="block";
+
+    setTimeout(()=>{
+        document.getElementById("loader").style.display="none";
+
+        let meanings = [
+            "A natural leader with strong determination 💪",
+            "Creative and intelligent personality 🎨",
+            "Kind-hearted and loving nature ❤️",
+            "Destined for success and fame 🌟",
+            "Brave and confident individual 🔥",
+            "Highly intuitive and wise 🧠",
+            "Charming and attractive personality 😍"
+        ];
+
+        let result = meanings[Math.floor(Math.random()*meanings.length)];
+
+        document.getElementById("result").innerHTML =
+        "Hello <b>"+name+"</b> 👋<br><br>" +
+        result;
+
+    },2500);
+}
+
+/* 🔥 Monetag Redirect */
+function goAd(){
+    window.location.href="YOUR_MONETAG_LINK";
+}
+</script>
+
+</body>
+</html>

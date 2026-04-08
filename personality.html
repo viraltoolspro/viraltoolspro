@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personality Test 🧩 | Viral Tools</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+}
+
+/* Navbar */
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+    background:#000000cc;
+}
+.navbar a {
+    color:white;
+    margin:0 10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Container */
+.container {
+    max-width:600px;
+    margin:40px auto;
+    background:#000000aa;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+h1 {margin-bottom:10px;}
+
+.question {
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.option {
+    display:block;
+    margin:10px;
+    padding:12px;
+    background:#222;
+    border-radius:10px;
+    cursor:pointer;
+}
+.option:hover {
+    background:#333;
+}
+
+button {
+    padding:12px 20px;
+    background:#00ffcc;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* Result */
+.result {
+    margin-top:20px;
+    font-size:20px;
+    color:#00ffcc;
+}
+
+/* Loader */
+.loader {
+    display:none;
+    margin-top:15px;
+}
+
+/* Ads */
+.ad-box {
+    margin:15px 0;
+    padding:10px;
+    background:#111;
+    border-radius:10px;
+}
+
+/* Footer */
+.footer {
+    text-align:center;
+    padding:15px;
+    background:#000000cc;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+<div><b>ViralTools 🔥</b></div>
+<div>
+<a href="index.html">Home</a>
+<a href="tools.html">Tools</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+
+<div class="container">
+
+<h1>🧩 Personality Test</h1>
+<p>Answer simple questions to discover your personality type</p>
+
+<!-- 🔥 Adsterra Top -->
+<div class="ad-box">
+<p>Ad Space</p>
+</div>
+
+<div id="quiz">
+<div class="question" id="question">Click start to begin</div>
+<div id="options"></div>
+<button onclick="startTest()">Start Test 🚀</button>
+</div>
+
+<div class="loader" id="loader">Analyzing your personality... ⏳</div>
+
+<div class="result" id="result"></div>
+
+<!-- 🔥 Monetag Unlock -->
+<div class="ad-box">
+<button onclick="goAd()">Unlock Full Personality Report 🔥</button>
+</div>
+
+<!-- 🔥 Adsterra Bottom -->
+<div class="ad-box">
+<p>Ad Space</p>
+</div>
+
+</div>
+
+<div class="footer">
+<p>© 2026 ViralTools | All Rights Reserved</p>
+</div>
+
+<script>
+let questions = [
+{q:"You prefer:", options:["Being alone","Being with friends"], type:["introvert","extrovert"]},
+{q:"At a party you:", options:["Stay quiet","Talk to everyone"], type:["introvert","extrovert"]},
+{q:"Decision making:", options:["Think deeply","Act quickly"], type:["thinker","doer"]},
+{q:"Work style:", options:["Plan everything","Go with flow"], type:["planner","spontaneous"]},
+{q:"You enjoy:", options:["Reading","Social events"], type:["introvert","extrovert"]}
+];
+
+let index = 0;
+let scores = {introvert:0, extrovert:0, thinker:0, doer:0, planner:0, spontaneous:0};
+
+function startTest(){
+    index = 0;
+    scores = {introvert:0, extrovert:0, thinker:0, doer:0, planner:0, spontaneous:0};
+    loadQuestion();
+}
+
+function loadQuestion(){
+    if(index >= questions.length){
+        finishTest();
+        return;
+    }
+
+    let q = questions[index];
+    document.getElementById("question").innerText = q.q;
+
+    let optHTML="";
+    q.options.forEach((opt,i)=>{
+        optHTML += `<div class="option" onclick="selectOption(${i})">${opt}</div>`;
+    });
+
+    document.getElementById("options").innerHTML = optHTML;
+}
+
+function selectOption(i){
+    let type = questions[index].type[i];
+    scores[type]++;
+    index++;
+    loadQuestion();
+}
+
+function finishTest(){
+    document.getElementById("options").innerHTML="";
+    document.getElementById("loader").style.display="block";
+
+    setTimeout(()=>{
+        document.getElementById("loader").style.display="none";
+
+        let personality = Object.keys(scores).reduce((a,b)=> scores[a] > scores[b] ? a : b);
+
+        let resultText = "";
+
+        if(personality==="introvert") resultText="You are Introvert 🧘";
+        else if(personality==="extrovert") resultText="You are Extrovert 🎉";
+        else if(personality==="thinker") resultText="You are Thinker 🤔";
+        else if(personality==="doer") resultText="You are Action Taker 🚀";
+        else if(personality==="planner") resultText="You are Planner 📋";
+        else resultText="You are Spontaneous 🎯";
+
+        document.getElementById("result").innerHTML =
+        "Your Personality Type:<br><br><b>"+resultText+"</b>";
+
+    },2500);
+}
+
+/* 🔥 Monetag Redirect */
+function goAd(){
+    window.location.href="YOUR_MONETAG_LINK";
+}
+</script>
+
+</body>
+</html>

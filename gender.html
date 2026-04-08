@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gender Predictor 👶 | Viral Tools</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#36d1dc,#5b86e5);
+    color:white;
+}
+
+/* Navbar */
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+    background:#000000cc;
+}
+.navbar a {
+    color:white;
+    margin:0 10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Container */
+.container {
+    max-width:520px;
+    margin:40px auto;
+    background:#000000aa;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+h1 {margin-bottom:10px;}
+
+/* Inputs */
+input, select {
+    width:90%;
+    padding:12px;
+    margin:10px;
+    border-radius:10px;
+    border:none;
+}
+
+/* Button */
+button {
+    padding:12px 20px;
+    background:#ffcc00;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover {
+    background:#ffdb4d;
+}
+
+/* Result */
+.result {
+    margin-top:20px;
+    font-size:20px;
+    color:#ffcc00;
+}
+
+/* Loader */
+.loader {
+    display:none;
+    margin-top:15px;
+}
+
+/* Ad box */
+.ad-box {
+    margin:15px 0;
+    padding:10px;
+    background:#111;
+    border-radius:10px;
+}
+
+/* Footer */
+.footer {
+    text-align:center;
+    padding:15px;
+    background:#000000cc;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+<div><b>ViralTools 🔥</b></div>
+<div>
+<a href="index.html">Home</a>
+<a href="tools.html">Tools</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+
+<div class="container">
+
+<h1>👶 Gender Predictor</h1>
+<p>Enter details to predict baby gender (for fun only)</p>
+
+<!-- 🔥 Adsterra Top -->
+<div class="ad-box">
+<!-- Paste Adsterra Banner Code -->
+<p>Ad Space</p>
+</div>
+
+<input type="text" id="name" placeholder="Mother's Name">
+<input type="number" id="age" placeholder="Mother's Age">
+<select id="month">
+<option value="">Select Conception Month</option>
+<option>January</option>
+<option>February</option>
+<option>March</option>
+<option>April</option>
+<option>May</option>
+<option>June</option>
+<option>July</option>
+<option>August</option>
+<option>September</option>
+<option>October</option>
+<option>November</option>
+<option>December</option>
+</select>
+
+<button onclick="predictGender()">Predict Gender 🎯</button>
+
+<div class="loader" id="loader">Analyzing... ⏳</div>
+
+<div class="result" id="result"></div>
+
+<!-- 🔥 Monetag Unlock -->
+<div class="ad-box">
+<button onclick="goAd()">Unlock Full Report 🔥</button>
+</div>
+
+<!-- 🔥 Adsterra Bottom -->
+<div class="ad-box">
+<!-- Paste Adsterra Native / Social Bar -->
+<p>Ad Space</p>
+</div>
+
+</div>
+
+<div class="footer">
+<p>© 2026 ViralTools | All Rights Reserved</p>
+</div>
+
+<script>
+function predictGender(){
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let month = document.getElementById("month").value;
+
+    if(name==="" || age==="" || month===""){
+        alert("Please fill all fields!");
+        return;
+    }
+
+    document.getElementById("loader").style.display="block";
+
+    setTimeout(()=>{
+        document.getElementById("loader").style.display="none";
+
+        let gender = Math.random() > 0.5 ? "👦 Boy" : "👧 Girl";
+
+        let msg = gender === "👦 Boy" 
+        ? "Strong and energetic baby expected 💪" 
+        : "Cute and lovely baby expected 💖";
+
+        document.getElementById("result").innerHTML =
+        "Hello <b>"+name+"</b> 👋<br><br>" +
+        "Prediction: <b>"+gender+"</b><br><br>" +
+        msg;
+
+    },2500);
+}
+
+/* 🔥 Monetag Redirect */
+function goAd(){
+    window.location.href="YOUR_MONETAG_LINK";
+}
+</script>
+
+</body>
+</html>
